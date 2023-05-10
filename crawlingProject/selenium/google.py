@@ -29,40 +29,40 @@ elem.send_keys(Keys.RETURN)
 #스크롤 내리기 반복문_이거 풀면 오류남 왜지
 SCROLL_PAUSE_TIME = 2
 
-# # Get scroll height
-# last_height = driver.execute_script("return document.body.scrollHeight")
+# Get scroll height
+last_height = driver.execute_script("return document.body.scrollHeight")
 
-# while True:
+while True:
     
 
-#     # Scroll down to bottom
-#     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    # Scroll down to bottom
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-#     # Wait to load page
-#     time.sleep(SCROLL_PAUSE_TIME)
+    # Wait to load page
+    time.sleep(SCROLL_PAUSE_TIME)
 
-#     # Calculate new scroll height and compare with last scroll height
-#     new_height = driver.execute_script("return document.body.scrollHeight")
-#     if new_height == last_height:
+    # Calculate new scroll height and compare with last scroll height
+    new_height = driver.execute_script("return document.body.scrollHeight")
+    if new_height == last_height:
         
 
-#         try:
-#             driver.find_element(By.CSS_SELECTOR, ".r0zKGf").click()
-#         except:
-#             print("d1")
+        try:
+            driver.find_element(By.CSS_SELECTOR, ".r0zKGf").send_keys(Keys.ENTER)
+        except:
+            print("d1")
     
-#         try:
-#             driver.find_element(By.CSS_SELECTOR, ".mye4qd").click()
-#         except:
-#             print("d2")
+        try:
+            driver.find_element(By.CSS_SELECTOR, ".mye4qd").send_keys(Keys.ENTER)
+        except:
+            print("d2")
         
-#         new_height = driver.execute_script("return document.body.scrollHeight")
-#         if new_height == last_height:
-#             break
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
+            break
 
-#     last_height = new_height
+    last_height = new_height
 
-# time.sleep(3)
+time.sleep(3)
 
 #썸네일 선택 구문
 images = driver.find_elements(By.CSS_SELECTOR, ".bRMDJf.islir")
